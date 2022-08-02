@@ -6,19 +6,19 @@ import SeacrchExcerses from "../components/SeacrchExcerses";
 
 const Home = () => {
   const [bodyPart, setBodyPart] = useState("all");
-  const [excercies, setExcercies] = useState([]);
+  const [exercies, setExercies] = useState([]);
   return (
     <Box>
       <HeroBanner />
       <SeacrchExcerses
-        setExcercies={setExcercies}
+        setExercies={setExercies}
         bodyPart={bodyPart}
         setBodyPart={setBodyPart}
       />
       <Exercises
-        setExcercies={setExcercies}
+        excercies={exercies}
+        setExercies={setExercies}
         bodyPart={bodyPart}
-        setBodyPart={setBodyPart}
       />
     </Box>
   );

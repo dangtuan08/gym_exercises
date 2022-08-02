@@ -16,6 +16,7 @@ const SeacrchExcerses = ({ setExercies, bodyPart, setBodyPart }) => {
 
       setBodyParts(["all", ...bodyPartsData]);
     };
+
     fetchExerciesData();
   }, []);
 
@@ -26,14 +27,20 @@ const SeacrchExcerses = ({ setExercies, bodyPart, setBodyPart }) => {
         exerciseOptions
       );
 
-      const searchedExcerses =
-        exercisesData.name.toLowerCase().includes(search) ||
-        exercisesData.target.toLowerCase().includes(search) ||
-        exercisesData.equipment.toLowerCase().includes(search) ||
-        exercisesData.bodyPart.toLowerCase().includes(search);
+      // console.log(exercisesData);
+
+      const searchedExercises = exercisesData.filter(
+        (item) =>
+          item.name.toLowerCase().includes(search) ||
+          item.target.toLowerCase().includes(search) ||
+          item.equipment.toLowerCase().includes(search) ||
+          item.bodyPart.toLowerCase().includes(search)
+      );
+
+      console.log(searchedExercises);
 
       setSearch("");
-      setExercies(searchedExcerses);
+      setExercies(searchedExercises);
     }
   };
 

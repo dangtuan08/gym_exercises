@@ -44,7 +44,7 @@ const HeroBanner = () => {
         color="#ff2625"
         sx={{
           opacity: 0.1,
-          dislay: { lg: "block", xs: "none" },
+          display: { lg: "block", xs: "none" },
         }}
       >
         Exercises
